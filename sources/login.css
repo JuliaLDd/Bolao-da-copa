@@ -1,76 +1,146 @@
-html,body {
-	height: 100%;
+html, body {
+  height: 100%;
 }
 
 body.my-login-page {
-	background-color: #f7f9fb;
-	font-size: 14px;
+  background-color: #f7f6f3;
+  font-size: 14px;
 }
 
 .my-login-page .brand {
-	width: 90px;
-	height: 90px;
-	overflow: hidden;
-	border-radius: 50%;
-	margin: 0 auto;
-	margin: 40px auto;
-	box-shadow: 0 4px 8px rgba(0,0,0,.05);
-	position: relative;
-	z-index: 1;
+  text-align: center;
+  margin: 40px auto 24px;
 }
 
 .my-login-page .brand img {
-	width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.my-login-page .brand-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2f6f4e;
+  margin-top: 10px;
 }
 
 .my-login-page .card-wrapper {
-	width: 400px;
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .my-login-page .card {
-	border-color: transparent;
-	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+  border-color: transparent;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
 }
 
 .my-login-page .card.fat {
-	padding: 10px;
+  padding: 10px;
 }
 
 .my-login-page .card .card-title {
-	margin-bottom: 30px;
+  font-family: "Space Grotesk", sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.my-login-page .form-control {
-	border-width: 2.3px;
+.my-login-page .forgot-hint {
+  color: #8a8780;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .my-login-page .form-group label {
-	width: 100%;
+  width: 100%;
+  font-weight: 600;
+}
+
+.my-login-page .form-group label a {
+  font-weight: 400;
+  color: #2f6f4e;
+}
+
+.my-login-page .form-control {
+  border-width: 1.5px;
+  border-color: #d8d5ce;
+  border-radius: 8px;
+  height: 44px;
+}
+
+.my-login-page .form-control:focus {
+  border-color: #2f6f4e;
+  box-shadow: 0 0 0 3px #e7efe9;
+}
+
+.my-login-page .invalid-feedback {
+  color: #b3413a;
+}
+
+/* checkbox do lembrar de mim */
+.my-login-page .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #2f6f4e;
+  border-color: #2f6f4e;
+}
+
+.my-login-page .custom-control-label {
+  color: #8a8780;
+}
+
+.my-login-page .btn-primary {
+  background-color: #2f6f4e;
+  border-color: #2f6f4e;
+}
+
+.my-login-page .btn-primary:hover,
+.my-login-page .btn-primary:focus {
+  background-color: #255a3e;
+  border-color: #255a3e;
+}
+
+.my-login-page .btn-primary:disabled {
+  background-color: #8a8780;
+  border-color: #8a8780;
+  opacity: 0.7;
 }
 
 .my-login-page .btn.btn-block {
-	padding: 12px 10px;
+  padding: 12px 10px;
+  font-weight: 600;
+  border-radius: 8px;
 }
 
 .my-login-page .footer {
-	margin: 40px 0;
-	color: #888;
-	text-align: center;
+  margin: 40px 0;
+  color: #8a8780;
+  text-align: center;
 }
 
 @media screen and (max-width: 425px) {
-	.my-login-page .card-wrapper {
-		width: 90%;
-		margin: 0 auto;
-	}
+  .my-login-page .card-wrapper {
+    width: 90%;
+  }
+
+  .my-login-page .brand img {
+    width: 72px;
+    height: 72px;
+  }
 }
 
 @media screen and (max-width: 320px) {
-	.my-login-page .card.fat {
-		padding: 0;
-	}
+  .my-login-page .card.fat {
+    padding: 0;
+  }
 
-	.my-login-page .card.fat .card-body {
-		padding: 15px;
-	}
+  .my-login-page .card.fat .card-body {
+    padding: 15px;
+  }
 }
