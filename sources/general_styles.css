@@ -1,1 +1,71 @@
+* {
+  box-sizing: border-box;
+}
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #f7f6f3;
+  color: #1a1d1e;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #1a1d1e;
+}
+
+/* fica mais bonitinho */
+p {
+  margin: 0;
+}
+
+a {
+  color: #2f6f4e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Evita que o iOS dê zoom automático ao clicar nos campos */
+input, select, textarea {
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* celulares */
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+/* telas muito pequenas  */
+@media screen and (max-width: 320px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+  }
+}
