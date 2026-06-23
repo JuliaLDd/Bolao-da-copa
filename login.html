@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Kodinger">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>My Login Page</title>
+	<title>Entrar — Jogo da Copa</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+	<link rel="stylesheet" href="sources/general_styles.css">
+	<link rel="stylesheet" href="sources/login.css">
 </head>
 
 <body class="my-login-page">
@@ -14,53 +16,39 @@
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">
 				<div class="card-wrapper">
-					<div class="brand">
-						<img src="img/logo.jpg" alt="logo">
-					</div>
-					<div class="card fat">
-						<div class="card-body">
-							<h4 class="card-title">Login</h4>
-							<form method="POST" class="my-login-validation" novalidate="">
-								<div class="form-group">
-									<label for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
-									<div class="invalid-feedback">
-										Email is invalid
-									</div>
-								</div>
+                    <div class="brand"> <img src="sources/ifpr_logo.jpg" alt="Logo IFPR"></div>
+					    <div class="card fat">
+						    <div class="card-body">
+							    <h4 class="card-title"> Entrar</h4>
+							    <form method="POST" class="my-login-validation" id="loginForm" novalidate>
+								    <div class="form-group">
+									    <label for="email"> E -mail</label>
+								    	<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									    <div class="invalid-feedback"> E-mail inválido </div>
+								            </div>
 
-								<div class="form-group">
-									<label for="password">Password
-										<a href="forgot.html" class="float-right">
-											Forgot Password?
-										</a>
-									</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
-								    <div class="invalid-feedback">
-								    	Password is required
+								    <div class="form-group">
+									    <label for="password">Senha <input id="password" type="password" class="form-control" name="password" required>
+							    		<div class="invalid-feedback"> Uma senha é obrigatória </div>
+								    </div>
+
+								    <div class="form-group">
+									    <div class="custom-checkbox custom-control">
+				    						<input type="checkbox" name="remember" id="remember" class="custom-control-input">
+					    					<label for="remember" class="custom-control-label"> Lembre-se de mim</label>
+						    			</div>
 							    	</div>
-								</div>
 
-								<div class="form-group">
-									<div class="custom-checkbox custom-control">
-										<input type="checkbox" name="remember" id="remember" class="custom-control-input">
-										<label for="remember" class="custom-control-label">Remeber Me</label>
-									</div>
-								</div>
-
-								<div class="form-group m-0">
-									<button type="submit" class="btn btn-primary btn-block">
-										Login
-									</button>
-								</div>
-								<div class="mt-4 text-center">
-									Don't have an account? <a href="register.html">Create One</a>
-								</div>
+					    			<div class="form-group m-0">
+						    			<button type="submit" class="btn btn-primary btn-block"> Entrar </button>
+							    	</div>
+                                    <div class="mt-4 text-center"> Ainda não tem conta? <a href="register.html"> Crie uma conta</a>
+								    </div>
 							</form>
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2017 &mdash; Your Company 
+						JogoCopa &mdash; Placar dos jogos da Copa
 					</div>
 				</div>
 			</div>
@@ -70,6 +58,26 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="js/my-login.js"></script>
+	<script>
+		(function () {
+			"use strict";
+
+			const form = document.getElementById("loginForm");
+
+			form.addEventListener("submit", function (event) {
+				if (!form.checkValidity()) {
+					event.preventDefault();
+					event.stopPropagation();
+				} else {
+					event.preventDefault();
+
+					// Por enquanto não há back-end, eu não encontrei ao menos, então apenas redireciona para a home.
+					// Quando vocês conectarem a API, troque este bloco por uma chamada real.
+					window.location.href = "index.html";
+				}
+				form.classList.add("was-validated");
+			}, false);
+		})();
+	</script>
 </body>
 </html>
